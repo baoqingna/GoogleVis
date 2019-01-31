@@ -1,0 +1,22 @@
+Region,Parent,Val,Fac
+Philippines,NA,1,1
+Luzon,Philippines,1,1
+Visayas,Philippines,3,3
+Mindanao,Philippines,2,2
+Region XIV,Luzon,3,1
+Region I,Luzon,3,3
+Region XV,Luzon,2,3
+Region II,Luzon,3,3
+Region III,Luzon,4,2
+Region IV-A,Luzon,2,2
+Region XVII,Luzon,2,3
+Region V,Luzon,3,3
+Region VI,Visayas,1,2
+Region VII,Visayas,1,1
+Region VIII,Visayas,3,3
+Region IX,Mindanao,3,2
+Region X,Mindanao,2,1
+Region XI,Mindanao,3,2
+Region XII,Mindanao,3,3
+Region XIII,Mindanao,3,3
+Region XVI,Mindanao,3,2
