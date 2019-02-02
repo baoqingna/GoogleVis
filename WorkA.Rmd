@@ -1,0 +1,99 @@
+---
+title: "GoogleVis"
+author: "Paul J."
+date: "January 31, 2019"
+output: html_document
+runtime: shiny
+---
+
+## googleVis examples
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Installing packages
+```{r, echo=FALSE}
+#install.packages(googleVis)
+library(googleVis)
+```
+
+## Bar Chart for students + Add edit button for on the fly customisation
+```{r, echo=TRUE}
+library(googleVis)
+
+setwd("C:/Users/pljvl/OneDrive/Desktop/R/GoogleVis/csv files")
+getwd()
+
+x <- read.csv("grades.csv")
+
+##students = data.frame(student = c("Paul", "Cielo", "Sidney", "Lynnrd"),
+##                      EnglGrade = c(94, 92, 88, 91),
+##                      MathGrade = c(98, 91, 93, 96))
+
+y <- gvisBarChart(x, options=list(gvis.editor="Edit me!"))
+plot(y)
+```
+
+## Pie Chart
+```{r, echo=TRUE}
+library(googleVis)
+
+setwd("C:/Users/pljvl/OneDrive/Desktop/R/GoogleVis/csv files")
+getwd()
+
+x <- read.csv("pchart.csv")
+
+y <- gvisPieChart(x)
+plot(y)
+```
+
+## Org chart
+```{r, echo=TRUE}
+library(googleVis)
+
+setwd("C:/Users/pljvl/OneDrive/Desktop/R/GoogleVis/csv files")
+getwd()
+
+x <- read.csv("treereg.csv")
+
+y <- gvisOrgChart(x, 
+                    options=list(width=600, height=250,
+                                 size='large', allowCollapse=TRUE))
+plot(y)
+```
+
+## Tree Map
+```{r, echo=TRUE}
+library(googleVis)
+
+setwd("C:/Users/pljvl/OneDrive/Desktop/R/GoogleVis/csv files")
+getwd()
+
+x <- read.csv("treereg.csv")
+
+y <- gvisTreeMap(x,
+"Region", "Parent",
+"Val", "Fac",
+options=list(fontSize=16))
+
+plot(y)
+```
+
+## Example showing __ data by state
+```{r, echo=TRUE}
+require(datasets)
+library(googleVis)
+
+setwd("C:/Users/pljvl/OneDrive/Desktop/R/GoogleVis/csv files")
+getwd()
+
+#x <- read.csv("treereg.csv")
+
+states <- data.frame(state.name, state.x77)
+y <- gvisGeoChart(states, "state.name", "Illiteracy",
+                          options=list(region="PH", 
+                                       displayMode="regions", 
+                                       resolution="provinces",
+                                       width=600, height=400))
+plot(y)
+```
